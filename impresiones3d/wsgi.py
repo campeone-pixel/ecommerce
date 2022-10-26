@@ -11,6 +11,6 @@ import os
 
 from django.core.wsgi import get_wsgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'impresiones3d.settings')
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "impresiones3d.settings")
 
 application = get_wsgi_application()
