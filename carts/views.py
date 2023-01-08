@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect, get_object_or_404
+from django.shortcuts import render, redirect, get_object_or_404,HttpResponse
 from .models import Cart, CartItem
 from store.models import Product
 
@@ -32,6 +32,12 @@ def remove_cart_item(request, product_id):
 
 
 def add_cart(request, product_id):
+
+    if request.method == 'POST':
+        color=request.POST.get('color')
+        size=request.POST.get('size')
+        print(color,size)
+    
     product = Product.objects.get(id=product_id)
     try:
         cart = Cart.objects.get(cart_id=_cart_id(request))
